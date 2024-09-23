@@ -29,9 +29,17 @@ app.post("/recipe",(req,res)=>{
           data = JSON.parse(recipeJSON)[2];
           break
     
-        default:    
+        default:
           break;
         }
+
+    // if(req.body.choice === "chicken"){
+    //     data = JSON.parse(recipeJSON)[0];
+    // }else if (req.body.choice === "beef"){
+    //     data = JSON.parse(recipeJSON)[1];
+    // }else if (req.body.choice === "fish"){
+    //     data = JSON.parse(recipeJSON)[2];
+    // }
     res.redirect("/");
 })
 

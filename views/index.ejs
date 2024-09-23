@@ -16,22 +16,33 @@
     </form>
 
     <div id="recipeContainer" class="hidden">
-        <% if (locals.recipe) {   %> 
-        <h2><%= recipe.name %></h2>
-        <% } %> 
-
-        <h3>Ingredients:</h3>
-        <ul id="ingredientsList">
-            <li><%=recipe.ingredients.protein.name %> <%=recipe.ingredients.protein.preparation %></li>
-            <li><%= recipe.ingredients.salsa.name %></li>
-            <li>
-                <% recipe.ingredients.toppings.forEach(topping =>{  %>
-                    <li><%= topping.name %> of <%= topping.quantity %> of <%=topping.ingredients %></li>
-                <% })    %>
-            </li>
-        </ul>
-
-
+        <div id="recipeContainer" class="hidden">
+            <% if(locals.recipe) { %>
+              <h2 id="recipeTitle"> <%= recipe.name %> </h2>
+           
+            <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
+        
+            <h3>Ingredients:</h3>
+            <ul id="ingredientsList">
+              <li><%= recipe.ingredients.protein.name %>, <%= recipe.ingredients.protein.preparation %>
+              </li>
+             
+              <li>
+                <%= recipe.ingredients.salsa.name %>
+              </li>
+             
+              <li>
+                <%recipe.ingredients.toppings.forEach(topping => { %>
+                  <li> 
+                    <%= topping.quantity  %> of <%= topping.name %> of <%= topping.ingredients[1] %>
+                  </li>
+                <% }) %>
+              </li>
+            </ul>
+            <% }else { %>
+              <h2> Pick your favorite taco ingredients</h2>
+              <% } %>
+        
 
 
     </div>

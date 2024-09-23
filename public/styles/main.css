@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 85vh;
+    margin: auto;
+    text-align: center;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='22' height='25' patternTransform='scale(4) rotate(170)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 80%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z' transform='translate(1,0)' stroke-width='13' stroke='hsla(0, 0%, 86.7%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-116,-100)' fill='url(%23a)'/></svg>");
+    
+}
+
+
+#title{
+   margin: 40px 40px;
+   font-size: 4rem;
+ 
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
+button{
+    font-size: 5rem;
+}
+
+.buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    padding: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    transition: 1s;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    box-shadow: 5px 5px 10px black;
+}
+.buttons button:hover{
+    transform: scale(1.10)
+}
+
+
+.hidden{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+#recipeContainer h2{
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+#recipeContainer h3{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+#ingredientsList{
+    list-style: none;
+    font-size: 18px;
+}
+#ingredientsList li {
+    margin-bottom: 10px;
+}

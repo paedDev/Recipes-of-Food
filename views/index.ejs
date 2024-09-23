@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes of Food</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    
+    <h1 id="title">Taco Town 🌮</h1>
+
+    <form action="/recipe" method="POST" class="buttons">
+        <button type="submit" value="chicken" name="choice">🍗</button>
+        <button type="submit" value="beef" name="choice">🥩</button>
+        <button type="submit" value="fish" name="choice">🐟</button>
+    </form>
+
+    <div id="recipeContainer" class="hidden">
+        <% if (locals.recipe) {   %> 
+        <h2><%= recipe.name %></h2>
+        <% } %> 
+
+        <h3>Ingredients:</h3>
+        <ul id="ingredientsList">
+            <li><%=recipe.ingredients.protein.name %> <%=recipe.ingredients.protein.preparation %></li>
+            <li><%= recipe.ingredients.salsa.name %></li>
+            <li>
+                <% recipe.ingredients.toppings.forEach(topping =>{  %>
+                    <li><%= topping.name %> of <%= topping.quantity %> of <%=topping.ingredients %></li>
+                <% })    %>
+            </li>
+        </ul>
+
+
+
+
+    </div>
 </body>
 </html>
